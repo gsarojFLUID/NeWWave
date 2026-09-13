@@ -1,9 +1,12 @@
-# NeWWave website
+# NeWWave
 
-A responsive single-page project website for **NeWWave — NekRS + OpenFAST + HOS**.
+A responsive research website for **NeWWave — NekRS + OpenFAST + HOS**, a coupled framework for high-fidelity offshore wind–wave simulation.
 
-## Files
-- `index.html` — page content and inline SVG artwork
-- `styles.css` — full responsive styling
-- `script.js` — navigation and scroll animations
+The site includes:
+- project vision and solver framework
+- research capabilities and questions
+- researcher profile for Saroj Gautam
+- collaboration and GitHub links
 
+## GitHub Pages
+This is a static site. Keep `index.html`, `styles.css`, and `script.js` in the repository root and publish the `main` branch from `/ (root)` using GitHub Pages.
