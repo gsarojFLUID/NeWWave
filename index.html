@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="NeWWave is a coupled NekRS–OpenFAST–HOS research framework for high-fidelity offshore wind and wave simulations." />
+  <title>NeWWave | NekRS + OpenFAST + HOS</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <header class="nav-wrap">
+    <nav class="nav container">
+      <a href="#top" class="brand" aria-label="NeWWave home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 54 54" role="img">
+            <circle cx="27" cy="27" r="25" fill="none" stroke="currentColor" stroke-width="1.6" opacity=".45"/>
+            <path d="M8 31c6.5-8 12.7-8 19.2 0 6.4 8 12.7 8 18.8 0" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/>
+            <path d="M27 10v12M22.5 15.5 27 22l4.5-6.5M15.8 20.2 27 22l-6-9.4M38.2 20.2 27 22l6-9.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="brand-text">NeW<span>Wave</span></span>
+      </a>
+
+      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#framework">Framework</a>
+        <a href="#capabilities">Capabilities</a>
+        <a href="#research">Research</a>
+        <a href="#contact" class="nav-cta">Collaborate</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-grid container">
+        <div class="hero-copy reveal">
+          <div class="eyebrow"><span class="dot"></span> High-fidelity offshore wind–wave simulation</div>
+          <h1>Resolving the physics<br/>between <em>wind</em>, <em>waves</em><br/>and <em>turbines</em>.</h1>
+          <p class="hero-lede">NeWWave couples <strong>NekRS</strong>, <strong>OpenFAST</strong>, and <strong>HOS</strong> into a unified research framework for next-generation offshore wind analysis.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#framework">Explore the framework <span>↗</span></a>
+            <a class="button ghost" href="#research">View research</a>
+          </div>
+          <div class="hero-stats">
+            <div><strong>NekRS</strong><span>High-order CFD</span></div>
+            <div><strong>OpenFAST</strong><span>Turbine dynamics</span></div>
+            <div><strong>HOS</strong><span>Nonlinear waves</span></div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal delay-1" aria-label="Illustration of offshore turbine, wave and wake coupling">
+          <svg viewBox="0 0 720 620" role="img">
+            <defs>
+              <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#2b9ec8" stop-opacity=".28"/>
+                <stop offset="1" stop-color="#0a2030" stop-opacity=".05"/>
+              </linearGradient>
+              <linearGradient id="wake" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#77e6ff" stop-opacity=".42"/>
+                <stop offset="1" stop-color="#77e6ff" stop-opacity="0"/>
+              </linearGradient>
+              <filter id="glow"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            </defs>
+
+            <circle cx="350" cy="250" r="220" fill="none" stroke="#b7f2ff" stroke-opacity=".08" stroke-width="1"/>
+            <circle cx="350" cy="250" r="160" fill="none" stroke="#b7f2ff" stroke-opacity=".08" stroke-width="1"/>
+            <path d="M120 252C236 214 354 210 620 270" fill="none" stroke="url(#wake)" stroke-width="78" stroke-linecap="round"/>
+            <path d="M125 248C270 224 412 228 650 288" fill="none" stroke="#7de4ff" stroke-opacity=".18" stroke-width="2" stroke-dasharray="6 12"/>
+            <path d="M110 270C270 248 420 260 650 315" fill="none" stroke="#7de4ff" stroke-opacity=".12" stroke-width="2" stroke-dasharray="4 14"/>
+
+            <g transform="translate(330 245)" filter="url(#glow)">
+              <line x1="0" y1="0" x2="0" y2="236" stroke="#e7fbff" stroke-width="8" stroke-linecap="round"/>
+              <circle cx="0" cy="0" r="12" fill="#e7fbff"/>
+              <g stroke="#e7fbff" stroke-width="7" stroke-linecap="round">
+                <line x1="0" y1="0" x2="0" y2="-118"/>
+                <line x1="0" y1="0" x2="104" y2="58"/>
+                <line x1="0" y1="0" x2="-104" y2="58"/>
+              </g>
+            </g>
+
+            <path d="M46 455 C100 428, 154 482, 208 455 S316 428, 370 455 S478 482, 532 455 S640 428, 694 455 L694 620 L46 620Z" fill="url(#sea)"/>
+            <path d="M45 455 C99 428,153 482,207 455 S315 428,369 455 S477 482,531 455 S639 428,693 455" fill="none" stroke="#71d9f2" stroke-width="3" stroke-linecap="round"/>
+            <path d="M50 490 C108 466,164 510,220 487 S330 468,386 490 S500 514,555 490 S640 470,690 492" fill="none" stroke="#71d9f2" stroke-opacity=".28" stroke-width="2"/>
+
+            <g font-family="Inter, Arial, sans-serif" font-size="16" fill="#bfeaf4">
+              <g transform="translate(90 120)">
+                <rect width="145" height="58" rx="14" fill="#0c2431" stroke="#70daf2" stroke-opacity=".4"/>
+                <text x="22" y="25" font-weight="700" fill="#e9fbff">NekRS</text>
+                <text x="22" y="45" font-size="12" opacity=".72">flow field</text>
+              </g>
+              <g transform="translate(485 105)">
+                <rect width="150" height="58" rx="14" fill="#0c2431" stroke="#70daf2" stroke-opacity=".4"/>
+                <text x="22" y="25" font-weight="700" fill="#e9fbff">OpenFAST</text>
+                <text x="22" y="45" font-size="12" opacity=".72">rotor + structure</text>
+              </g>
+              <g transform="translate(480 365)">
+                <rect width="130" height="58" rx="14" fill="#0c2431" stroke="#70daf2" stroke-opacity=".4"/>
+                <text x="22" y="25" font-weight="700" fill="#e9fbff">HOS</text>
+                <text x="22" y="45" font-size="12" opacity=".72">wave field</text>
+              </g>
+            </g>
+            <path d="M236 149 C285 155,300 176,318 214" fill="none" stroke="#70daf2" stroke-width="2" stroke-dasharray="5 8"/>
+            <path d="M483 154 C432 168,390 190,357 225" fill="none" stroke="#70daf2" stroke-width="2" stroke-dasharray="5 8"/>
+            <path d="M480 395 C432 410,386 420,348 438" fill="none" stroke="#70daf2" stroke-width="2" stroke-dasharray="5 8"/>
+          </svg>
+        </div>
+      </div>
+      <div class="hero-wave" aria-hidden="true"></div>
+    </section>
+
+    <section id="about" class="section about container">
+      <div class="section-kicker">01 / Vision</div>
+      <div class="split-heading">
+        <h2>One framework.<br/>Three coupled physical worlds.</h2>
+        <div>
+          <p>Offshore turbines operate at the intersection of atmospheric turbulence, nonlinear ocean waves, rotating aerodynamics, structural motion, and wake interactions. NeWWave is designed to study those processes together rather than in isolation.</p>
+          <p>By connecting high-order CFD, aeroelastic turbine dynamics, and nonlinear wave modelling, the framework targets realistic, physics-rich simulations for offshore wind research and design.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="framework" class="section dark-section">
+      <div class="container">
+        <div class="section-kicker">02 / Coupled framework</div>
+        <div class="framework-header">
+          <h2>NeWWave links the solvers that matter.</h2>
+          <p>Each solver retains its strengths while exchanging the information needed to capture coupled wind–wave–structure interactions.</p>
+        </div>
+
+        <div class="solver-grid">
+          <article class="solver-card reveal">
+            <div class="solver-index">01</div>
+            <div class="solver-icon">N</div>
+            <h3>NekRS</h3>
+            <p>GPU-accelerated, high-order spectral-element CFD for resolving atmospheric inflow, turbine wakes, coherent structures, and complex flow physics.</p>
+            <span class="tag">Fluid solver</span>
+          </article>
+          <article class="solver-card reveal delay-1">
+            <div class="solver-index">02</div>
+            <div class="solver-icon">O</div>
+            <h3>OpenFAST</h3>
+            <p>Multiphysics wind-turbine simulation for rotor aerodynamics, controller response, blade loads, drivetrain behaviour, and structural dynamics.</p>
+            <span class="tag">Turbine dynamics</span>
+          </article>
+          <article class="solver-card reveal delay-2">
+            <div class="solver-index">03</div>
+            <div class="solver-icon">H</div>
+            <h3>HOS</h3>
+            <p>High-order spectral wave modelling for nonlinear free-surface dynamics, broadband sea states, and realistic wave evolution.</p>
+            <span class="tag">Wave solver</span>
+          </article>
+        </div>
+
+        <div class="coupling-diagram reveal">
+          <div class="couple-node left"><strong>NekRS</strong><span>velocity · pressure · loads</span></div>
+          <div class="couple-arrow"><span>two-way exchange</span></div>
+          <div class="couple-node center"><strong>NeWWave</strong><span>coupling + orchestration</span></div>
+          <div class="couple-arrow"><span>motion · forcing</span></div>
+          <div class="couple-node right"><strong>OpenFAST + HOS</strong><span>structure · rotor · waves</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="capabilities" class="section container">
+      <div class="section-kicker">03 / Capabilities</div>
+      <div class="framework-header light-copy">
+        <h2>Built for multiscale offshore wind physics.</h2>
+        <p>From the rotor scale to the wind-farm scale, NeWWave supports questions that depend on interactions across fluid, structural, and ocean domains.</p>
+      </div>
+
+      <div class="capability-grid">
+        <article><span>01</span><h3>Atmospheric turbulence</h3><p>High-fidelity inflow, boundary-layer development, shear, turbulence spectra, and realistic wind conditions.</p></article>
+        <article><span>02</span><h3>Actuator-line aerodynamics</h3><p>Rotor forcing and wake generation with blade-resolved loading information from coupled turbine models.</p></article>
+        <article><span>03</span><h3>Wake dynamics</h3><p>Near- and far-wake evolution, wake recovery, tip-vortex breakdown, turbulent transport, and turbine-to-turbine interaction.</p></article>
+        <article><span>04</span><h3>Aeroelastic response</h3><p>Structural motion, rotor loads, controller effects, and coupled turbine response under turbulent offshore conditions.</p></article>
+        <article><span>05</span><h3>Nonlinear wave fields</h3><p>Irregular wave states and evolving free surfaces suitable for wind–wave interaction and offshore loading studies.</p></article>
+        <article><span>06</span><h3>GPU-scale simulation</h3><p>Designed around modern HPC workflows for computationally demanding, high-order simulations at research scale.</p></article>
+      </div>
+    </section>
+
+    <section id="research" class="section research-section">
+      <div class="container">
+        <div class="section-kicker">04 / Research directions</div>
+        <div class="research-layout">
+          <div class="research-copy">
+            <h2>Questions NeWWave is designed to answer.</h2>
+            <p>The framework focuses on flow physics and engineering questions that emerge only when the atmosphere, rotor, structure, and ocean are treated as an interacting system.</p>
+          </div>
+          <div class="research-list">
+            <div class="research-item"><span>01</span><div><h3>How do waves modify turbine wakes?</h3><p>Quantify the impact of wave-induced motion and marine boundary conditions on wake structure, transport, and recovery.</p></div></div>
+            <div class="research-item"><span>02</span><div><h3>How do turbulent inflows change structural response?</h3><p>Connect coherent atmospheric structures and wake events to time-varying rotor loads and turbine dynamics.</p></div></div>
+            <div class="research-item"><span>03</span><div><h3>How do coupled effects scale across a wind farm?</h3><p>Study the accumulation of wake–wave–structure interactions across multiple turbines and changing operating conditions.</p></div></div>
+            <div class="research-item"><span>04</span><div><h3>Which physical mechanisms drive uncertainty?</h3><p>Isolate the effects of turbulence, sea state, control, and structural motion on power, fatigue, and wake behaviour.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section outcomes container">
+      <div class="section-kicker">05 / Why it matters</div>
+      <div class="outcome-panel">
+        <div>
+          <h2>Better physics for better offshore wind decisions.</h2>
+          <p>NeWWave aims to reduce modelling gaps between idealized simulations and the coupled marine environment experienced by real offshore wind turbines.</p>
+        </div>
+        <div class="outcome-points">
+          <div><strong>01</strong><span>Improve understanding of coupled wind–wave loading.</span></div>
+          <div><strong>02</strong><span>Resolve wake mechanisms that reduced-order tools may miss.</span></div>
+          <div><strong>03</strong><span>Support safer and more efficient offshore wind systems.</span></div>
+          <div><strong>04</strong><span>Bridge high-fidelity research with engineering modelling.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+      <div class="container contact-panel reveal">
+        <div>
+          <div class="section-kicker">06 / Collaboration</div>
+          <h2>Interested in coupled offshore wind simulation?</h2>
+          <p>NeWWave is being developed as a research framework for high-fidelity offshore wind–wave interaction studies.</p>
+        </div>
+        <a class="button primary" href="mailto:your.email@mun.ca">Start a conversation <span>↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="brand footer-brand"><span class="brand-text">NeW<span>Wave</span></span></div>
+      <p>NekRS + OpenFAST + HOS<br/>Coupled offshore wind–wave simulation.</p>
+      <p class="footer-note">Research project website · Memorial University of Newfoundland</p>
+      <p class="copyright">© <span id="year"></span> NeWWave</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

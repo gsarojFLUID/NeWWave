@@ -1,0 +1,28 @@
+const nav = document.querySelector('.nav-wrap');
+const menu = document.querySelector('.menu-toggle');
+const links = document.querySelector('.nav-links');
+
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 20);
+});
+
+menu.addEventListener('click', () => {
+  const open = links.classList.toggle('open');
+  menu.setAttribute('aria-expanded', String(open));
+});
+
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => {
+    links.classList.remove('open');
+    menu.setAttribute('aria-expanded', 'false');
+  });
+});
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+document.getElementById('year').textContent = new Date().getFullYear();
