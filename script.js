@@ -34,7 +34,7 @@ if (windTurbineVideo) {
   const configureWindVideo = () => {
     windTurbineVideo.muted = true;
     windTurbineVideo.loop = true;
-    windTurbineVideo.playbackRate = 10;
+    windTurbineVideo.playbackRate = 4;
 
     const wrap = windTurbineVideo.closest('.flow-video-wrap');
     if (wrap && windTurbineVideo.videoWidth && windTurbineVideo.videoHeight) {
@@ -48,6 +48,6 @@ if (windTurbineVideo) {
 
   windTurbineVideo.addEventListener('loadedmetadata', configureWindVideo);
   windTurbineVideo.addEventListener('canplay', () => {
-    windTurbineVideo.playbackRate = 10;
+    windTurbineVideo.playbackRate = 4;
   });
 }
