@@ -189,13 +189,23 @@
       <div class="container">
         <div class="section-kicker">04 / Flow capability</div>
         <div class="flow-compact-grid">
-          <figure class="flow-figure reveal">
-            <div class="flow-image-wrap">
-              <img src="Photos/Velocity_Contour.png" alt="Velocity contour from a high-fidelity offshore wind simulation" loading="lazy" />
+          <figure class="flow-figure flow-video-figure reveal">
+            <div class="flow-video-wrap">
+              <video
+                id="windTurbineVideo"
+                class="flow-video"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                aria-label="Wind turbine wake simulation">
+                <source src="Photos/WindTurbine.ogv" type="video/ogg" />
+              </video>
             </div>
             <figcaption>
               <span>NekRS CFD</span>
-              <strong>Velocity field around the turbine wake</strong>
+              <strong>Wind turbine wake simulation</strong>
             </figcaption>
           </figure>
 
