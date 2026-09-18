@@ -181,6 +181,20 @@ h2 { margin:0; font-size:clamp(40px,5vw,64px); line-height:1.02; letter-spacing:
   object-fit:contain;
   border-radius:12px;
 }
+.flow-video-wrap {
+  position:relative;
+  width:100%;
+  overflow:hidden;
+  background:#06131d;
+  border-radius:12px 12px 0 0;
+}
+.flow-video {
+  display:block;
+  width:100%;
+  height:auto;
+  transform:translateY(-25%);
+  transform-origin:top center;
+}
 .flow-figure figcaption {
   display:flex;
   justify-content:space-between;
