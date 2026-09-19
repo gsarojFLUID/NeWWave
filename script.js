@@ -27,26 +27,16 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 document.getElementById('year').textContent = new Date().getFullYear();
 
-
 const windTurbineVideo = document.getElementById('windTurbineVideo');
 
 if (windTurbineVideo) {
-  const configureWindVideo = () => {
-    windTurbineVideo.muted = true;
-    windTurbineVideo.loop = true;
+  const setWindTurbineSpeed = () => {
     windTurbineVideo.playbackRate = 4;
-
-    const wrap = windTurbineVideo.closest('.flow-video-wrap');
-    if (wrap && windTurbineVideo.videoWidth && windTurbineVideo.videoHeight) {
-      const croppedHeight = windTurbineVideo.videoHeight * 0.75;
-      wrap.style.aspectRatio = `${windTurbineVideo.videoWidth} / ${croppedHeight}`;
-    }
-
     const playPromise = windTurbineVideo.play();
     if (playPromise) playPromise.catch(() => {});
   };
 
-  windTurbineVideo.addEventListener('loadedmetadata', configureWindVideo);
+  windTurbineVideo.addEventListener('loadedmetadata', setWindTurbineSpeed);
   windTurbineVideo.addEventListener('canplay', () => {
     windTurbineVideo.playbackRate = 4;
   });

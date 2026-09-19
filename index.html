@@ -188,12 +188,16 @@
     <section class="section flow-showcase">
       <div class="container">
         <div class="section-kicker">04 / Flow capability</div>
-        <div class="flow-compact-grid">
-          <figure class="flow-figure flow-video-figure reveal">
-            <div class="flow-video-wrap">
+        <div class="flow-section-head">
+          <h2>High-fidelity flow simulation.</h2>
+          <p>NeWWave supports turbine-wake, multi-turbine, and vortical-flow simulations for offshore wind studies.</p>
+        </div>
+
+        <div class="flow-video-grid">
+          <figure class="flow-video-card reveal">
+            <div class="flow-video-frame crop-top">
               <video
                 id="windTurbineVideo"
-                class="flow-video"
                 autoplay
                 muted
                 loop
@@ -201,19 +205,49 @@
                 preload="metadata"
                 aria-label="Wind turbine wake simulation">
                 <source src="Photos/WindTurbine.mp4" type="video/mp4" />
-                <source src="Photos/WindTurbine.ogv" type="video/ogg" />
               </video>
             </div>
             <figcaption>
-              <span>NekRS CFD</span>
-              <strong>Wind turbine wake simulation</strong>
+              <span>Single turbine</span>
+              <strong>Wake development</strong>
             </figcaption>
           </figure>
 
-          <div class="flow-copy reveal delay-1">
-            <h2>Resolved flow fields.</h2>
-            <p>NeWWave resolves the velocity field around wind turbines and through their wakes. It can capture wake development, recovery, and turbine-to-turbine interaction under turbulent offshore conditions.</p>
-          </div>
+          <figure class="flow-video-card reveal delay-1">
+            <div class="flow-video-frame">
+              <video
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                aria-label="Staggered wind turbine simulation">
+                <source src="Photos/Staggerred.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <figcaption>
+              <span>Multi-turbine</span>
+              <strong>Staggered layout</strong>
+            </figcaption>
+          </figure>
+
+          <figure class="flow-video-card reveal delay-2">
+            <div class="flow-video-frame">
+              <video
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                aria-label="Vorticity field simulation">
+                <source src="Photos/Vorticity.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <figcaption>
+              <span>Flow structures</span>
+              <strong>Vorticity field</strong>
+            </figcaption>
+          </figure>
         </div>
       </div>
     </section>

@@ -155,93 +155,72 @@ h2 { margin:0; font-size:clamp(40px,5vw,64px); line-height:1.02; letter-spacing:
 }
 .flow-showcase .container { position:relative; z-index:1; }
 .flow-showcase .section-kicker { color:var(--aqua); }
-.flow-compact-grid {
+.flow-section-head {
   display:grid;
-  grid-template-columns:.9fr 1.1fr;
+  grid-template-columns:1.05fr .95fr;
   gap:72px;
-  align-items:center;
+  align-items:end;
+  margin-bottom:42px;
 }
-.flow-figure {
+.flow-section-head h2 {
+  font-size:clamp(38px,4vw,56px);
+}
+.flow-section-head p {
+  color:#91abb5;
+  font-size:16px;
   margin:0;
+  max-width:520px;
+}
+.flow-video-grid {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px;
+}
+.flow-video-card {
+  margin:0;
+  overflow:hidden;
   border:1px solid rgba(255,255,255,.10);
-  border-radius:20px;
+  border-radius:18px;
+  background:#06131d;
+  box-shadow:0 20px 45px rgba(0,0,0,.22);
+}
+.flow-video-frame {
+  height:245px;
   overflow:hidden;
   background:#06131d;
-  box-shadow:0 24px 60px rgba(0,0,0,.24);
 }
-.flow-image-wrap {
-  padding:10px;
-  background:#06131d;
-}
-.flow-figure img {
+.flow-video-frame video {
   display:block;
   width:100%;
-  height:auto;
-  max-height:390px;
-  object-fit:contain;
-  border-radius:12px;
+  height:100%;
+  object-fit:cover;
 }
-.flow-video-wrap {
-  position:relative;
-  width:100%;
-  overflow:hidden;
-  background:#06131d;
-  border-radius:12px 12px 0 0;
+.flow-video-frame.crop-top video {
+  height:128%;
+  transform:translateY(-22%);
+  transform-origin:center top;
 }
-.flow-video {
-  display:block;
-  width:100%;
-  height:auto;
-  transform:translateY(-25%);
-  transform-origin:top center;
-}
-.flow-figure figcaption {
+.flow-video-card figcaption {
   display:flex;
   justify-content:space-between;
-  gap:18px;
   align-items:center;
-  padding:14px 16px;
+  gap:14px;
+  min-height:58px;
+  padding:13px 15px;
   border-top:1px solid rgba(255,255,255,.08);
 }
-.flow-figure figcaption span {
+.flow-video-card figcaption span {
   color:var(--aqua);
   font-size:9px;
   font-weight:800;
-  letter-spacing:.15em;
+  letter-spacing:.14em;
   text-transform:uppercase;
 }
-.flow-figure figcaption strong {
+.flow-video-card figcaption strong {
   color:#dff9fc;
   font-size:12px;
   font-weight:650;
-}
-.flow-copy h2 {
-  font-size:clamp(38px,4vw,56px);
-  margin-bottom:24px;
-}
-.flow-copy > p {
-  color:#91abb5;
-  font-size:16px;
-  margin:0 0 17px;
-}
-.flow-notes {
-  margin-top:28px;
-  border-top:1px solid rgba(255,255,255,.10);
-}
-.flow-notes div {
-  display:grid;
-  grid-template-columns:145px 1fr;
-  gap:22px;
-  padding:15px 0;
-  border-bottom:1px solid rgba(255,255,255,.08);
-}
-.flow-notes strong {
-  color:#dff9fc;
-  font-size:13px;
-}
-.flow-notes span {
-  color:#73919d;
-  font-size:13px;
+  text-align:right;
 }
 
 .research-section { background:var(--paper-2); }
@@ -371,7 +350,7 @@ footer { background:var(--ink); color:#90a8b1; padding:72px 0 40px; }
   .hero-copy { padding-bottom:20px; }
   .hero-visual { margin-top:-40px; }
   .hero-visual svg { max-width:560px; }
-  .split-heading, .framework-header, .research-layout, .outcome-panel, .researcher-grid, .flow-compact-grid { grid-template-columns:1fr; gap:40px; }
+  .split-heading, .framework-header, .research-layout, .outcome-panel, .researcher-grid, .flow-section-head { grid-template-columns:1fr; gap:40px; }
   .research-copy { position:static; }
   .solver-grid, .capability-grid { grid-template-columns:1fr 1fr; }
   .coupling-diagram { grid-template-columns:1fr; gap:18px; }
@@ -398,9 +377,8 @@ footer { background:var(--ink); color:#90a8b1; padding:72px 0 40px; }
   .section { padding:82px 0; }
   .researcher-photo-wrap { min-height:240px; }
   .researcher-avatar { width:210px; height:210px; background-position:center 18%; }
-  .flow-notes div { grid-template-columns:1fr; gap:5px; }
-  .flow-image-wrap { padding:8px; }
-  .flow-figure figcaption { align-items:flex-start; flex-direction:column; gap:5px; }
+  .flow-video-grid { grid-template-columns:1fr; }
+  .flow-video-frame { height:220px; }
   .solver-grid, .capability-grid { grid-template-columns:1fr; }
   .capability-grid { border-left:0; }
   .capability-grid article { border-left:1px solid var(--line); }
